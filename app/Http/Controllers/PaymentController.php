@@ -48,6 +48,8 @@ class PaymentController extends Controller
         return response()->json(['data'=>$data],201);
     }
 
+
+
     /**
      * Display the specified resource.
      *

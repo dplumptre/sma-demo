@@ -28,10 +28,10 @@ Route::get('/getinfo',[App\Http\Controllers\ApiController::class, 'getInfo'] );
 
 Route::resource('/classrooms',App\Http\Controllers\ClassroomController::class);
 Route::resource('/students',App\Http\Controllers\StudentController::class);
-Route::resource('/payments',App\Http\Controllers\PaymentController::class);
+Route::resource('/payments/now',App\Http\Controllers\PaymentController::class);
 // This route below checks if a student has paid or not
 Route::prefix('payments')->group(function () {  
      Route::get('student/{student}/{classroom}', [App\Http\Controllers\PaymentController::class, 'getStudentPayment']);
-    
+    //  Route::post('paynow', [App\Http\Controllers\PaymentController::class, 'payNow']);
 });
 
